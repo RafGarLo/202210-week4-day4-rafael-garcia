@@ -1,28 +1,29 @@
 import { useContext } from 'react';
 import { Robot } from '../../models/robot';
 import { RobotContext } from '../context/context';
-import { Robot } from '../../models/robot';
+import styles from './robot.item.module.css';
 
 export function RobotItem({ item }: { item: Robot }) {
-    const { handlerEraser, handlerComplete } = useContext(RobotContext);
+    const { handlerEraser } = useContext(RobotContext);
 
     const handleClick = () => {
         handlerEraser(item.id);
     };
-    const handleChange = () => {
-        handlerComplete(item);
-    };
+
     return (
         <li className={styles.host}>
-            <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={handleChange}
-            />
-            <span>{item.id}</span> -<span>{item.name}</span>
-            <span className="button" onClick={handleClick}>
-                🗑️
-            </span>
+            <img src={item.image} alt={item.name} />
+            <div>
+                <span>
+                    <h2>Nombre: {item.name}</h2>
+                </span>
+                <span>Velocidad: {item.strength}</span>
+                <span>Resistencia: {item.endurance}</span>
+                <span>Nacimiento: {item.creationDate}</span>
+                <span className={styles.button} onClick={() => handleClick()}>
+                    🗑️
+                </span>
+            </div>
         </li>
     );
 }
