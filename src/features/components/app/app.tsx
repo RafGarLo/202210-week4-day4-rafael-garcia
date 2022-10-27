@@ -1,13 +1,14 @@
-// import { TodoContextProvider } from '../../context/todo/provider';
-// import { Layout } from '../layout/layout';
-// import { AppRoutes } from '../routes/app.routes';
+import React from 'react';
 
-// export function App() {
-//     return (
-//         <Layout>
-//             <TodoContextProvider>
-//                 <AppRoutes></AppRoutes>
-//             </TodoContextProvider>
-//         </Layout>
-//     );
-// }
+import './App.css';
+import { RobotList } from '../robotlist/robotlist';
+
+function App() {
+    return (
+        <div className="App">
+            <h2>Robots</h2>
+            <RobotList></RobotList>
+        </div>
+    );
+}
+export default App;
