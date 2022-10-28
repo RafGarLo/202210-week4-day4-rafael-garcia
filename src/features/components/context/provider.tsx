@@ -6,17 +6,16 @@ export function RobotContextProvider({ children }: { children: JSX.Element }) {
     const initialRobots: Array<Robot> = [];
     const [robots, setRobots] = useState(initialRobots);
 
-    const handleAdd = (newRobot: Robot) => {
-        setRobots([...robots, newRobot]);
-    };
     const handlerEraser = (deletedID: number) => {
-        setRobots(robots.filter(item => item.id !== deletedID));
+        setRobots(
+            robots.filter((item: { id: number }) => item.id !== deletedID)
+        );
     };
     const handlerComplete = (robot: Robot) => {
         updateRobot(robot.id, { isComplete: !robot.isComplete });
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         (robot: { id: number }) => {
-            robots.map(item =>
+            robots.map((item: any) =>
                 item.id === robot.id
                     ? { ...item, isComplete: !item.isComplete }
                     : item
@@ -30,7 +29,7 @@ export function RobotContextProvider({ children }: { children: JSX.Element }) {
 
     const context = {
         robots,
-        handlerEraser
+        handlerEraser,
     };
     return (
         <RobotContext.Provider value={context}>
