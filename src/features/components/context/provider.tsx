@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Robot } from '../../models/robot';
 import { RobotContext } from './context';
 
-export function TodoContextProvider({ children }: { children: JSX.Element }) {
+export function RobotContextProvider({ children }: { children: JSX.Element }) {
     const initialRobots: Array<Robot> = [];
     const [robots, setRobots] = useState(initialRobots);
 
