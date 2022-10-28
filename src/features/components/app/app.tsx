@@ -11,7 +11,7 @@ function App() {
             <h2>Robots</h2>
             <Layout>
                 <RobotContextProvider>
-                    <p>Estamos trabajando para mejorar la experiencia</p>
+                    <p>Bienvenido</p>
                 </RobotContextProvider>
             </Layout>
         </div>
