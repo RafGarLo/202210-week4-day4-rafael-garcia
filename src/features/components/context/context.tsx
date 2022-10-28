@@ -3,11 +3,11 @@ import { Robot } from '../../models/robot';
 
 const initialContext: {
     robots: Array<Robot>;
-    handleAdd: (newRobot: Robot) => void;
+    // handleAdd: (newRobot: Robot) => void;
     handlerEraser: (deletedID: number) => void;
 } = {
     robots: [],
-    handleAdd: () => undefined,
+    // handleAdd: () => undefined,
     handlerEraser: () => undefined,
 };
 
